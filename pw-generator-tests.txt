@@ -1,0 +1,39 @@
+describe("variable declarations", () => {
+    test("capital letters array should have a length of 26 characters", () => {
+        expect(capitalLetters.length).toBe(26);
+    }
+
+    test("lowercase letters array should have a length of 26 characters", () => {
+        expect(lowerCaseLetters.length).toBe(26);
+    }
+
+    test("special characters array should have a length of 11 characters", () => {
+        expect(specialCharacters.length).toBe(11);
+    }
+
+     test("numbers array should have a length of 10 characters", () => {
+        expect(numbers.length).toBe(10);
+     }
+});
+
+describe("password length and generation", () => {
+    test("should return a length of 26 if includedCharacters only has lowercase letters", () => {
+        // TO DO
+        expect(includedCharacters.size()).toBe(26);
+    }
+
+    test("should return a length of 37 if includedCharacters only has lowercase letters and special characters", () => {
+         // TO DO
+         expect(includedCharacters.size()).toBe(37);
+    }
+
+    test("should blah blah", () => {
+         // TO DO
+         expect(includedCharacters.size()).toBe(47);
+    }
+
+     test("should return a length of 73 if includedCharacters has all character types", () => {
+         // TO DO
+         expect(includedCharacters.size()).toBe(73);
+     }
+});

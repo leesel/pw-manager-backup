@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}" th:rel="stylesheet"/>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;500&family=Righteous&family=Staatliches&display=swap');
+
+        body{
+            height:100vh;
+            background-image: url('https://media.giphy.com/media/9lhogNzeTDU0hqM9Qk/giphy.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+        @media screen and (max-width:2500px) {
+  body {
+    background-size: cover;
+    background-attachment:fixed }
+}
+
+        .table-bordered {
+            background-color:#b5838d;
+            color: black;
+            font-weight:bold;
+            border: 20px double transparent;
+        }
+        .main-title {
+            font-family: 'Righteous', cursive;
+            font-size: 60px;
+            color:#b5838d;
+            letter-spacing: 5px;
+            margin-top: 30px;
+        }
+
+        .table th {
+          font-family: 'Staatliches', cursive;
+          font-size:20px;
+          color:#001233;
+          letter-spacing:5px;
+        }
+
+<!--        #passTD {-->
+<!--            color:transparent;-->
+
+<!--        }-->
+<!--        #passTD:hover {-->
+<!--            color:black;-->
+
+<!--        }-->
+.btn{
+background-color:#b5838d;
+color:black;
+border:2px solid #b5838d;
+
+}
+.title-svg{
+height:30px;
+
+}
+
+.title-svg path{
+fill:#b5838d;
+}
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+<!--    <h1 class="main-title">P-->
+<!--        <svg class="title-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z" /></svg>-->
+<!--        ssw-->
+<!--        <svg class="title-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>-->
+<!--        rd Manager</h1>-->
+<!--    <hr/>-->
+    <h1 class="main-title">Password Dashboard</h1>
+    <hr/>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Entries</th>
+            <th>Id</th>
+            <th>URL</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Created At</th>
+            <th>Updated At</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="item : ${entryItems}">
+            <td>
+                <div class="btn btn-group-sm" role="group">
+                    <a class="btn btn-info" th:href="@{/edit/{id}(id=${item.id})}">
+                        <i class="bi bi-pencil-fill"></i>
+                        Edit
+                    </a>
+                    <a class="btn btn-danger" th:href="@{/delete/{id}(id=${item.id})}">
+                        <i class="bi bi-trash-fill"></i>
+                        Delete
+                    </a>
+                </div>
+            </td>
+            <td th:text="${item.id}"></td>
+            <td th:text="${item.url}"></td>
+            <td th:text="${item.username}"></td>
+            <td th:text="${item.password}" id="passTD"></td>
+            <td th:text="${item.createdAt}"></td>
+            <td th:text="${item.updatedAt}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p><a class="btn btn-outline-success" href="/create-entry">
+        <i class="bi bi-plus-square-fill">Add an entry</i></a></p>
+
+</div>
+<script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.min.js}"></script>
+
+
+
+
+</body>
+</html>

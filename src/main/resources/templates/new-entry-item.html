@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}" th:rel="stylesheet"/>
+    <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;500&family=Righteous&display=swap');
+
+           body{
+            height:100vh;
+            background-image: url('https://media.giphy.com/media/9lhogNzeTDU0hqM9Qk/giphy.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+        @media screen and (max-width:1800px) {
+  body {
+    background-size: cover;
+    background-attachment:fixed }
+}
+h2 {
+color:white;
+font-size:60px;
+}
+
+        .table-bordered {
+            background-color:#7d8597;
+            color:#001845;
+        }
+        .main-title {
+            font-family: 'Righteous', cursive;
+            font-size: 60px;
+        }
+
+        .table th {
+            font-family: 'Chakra Petch', sans-serif;
+            font-size:20px;
+
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-2">
+            <p>
+                <a class="btn btn-outline-success" href="/">
+                    <i class="bi bi-arrow-left-square-fill"></i>
+                    Back
+                </a>
+            </p>
+        </div>
+        <div class="col-6">
+            <h2>Add a New Entry Item</h2>
+            <form action="#" method="POST" th:action="@{/entry}" th:object="${entryItem}">
+                <div class="form-group">
+                    <label for="url">URL</label>
+                    <input class="form-control"
+                           id="url"
+                           placeholder="URL"
+                           th:field="*{url}"
+                           type="text"
+                    >
+                    <label for="username">USERNAME</label>
+                    <input class="form-control"
+                           id="username"
+                           placeholder="Username"
+                           th:field="*{username}"
+                           type="text"
+                    >
+                    <label for="password">PASSWORD</label>
+                    <input class="form-control"
+                           id="password"
+                           placeholder="Password"
+                           th:field="*{password}"
+                           type="text"
+                    >
+                    <button class="btn btn-outline-success" type="submit">
+                        <i class="bi bi-plus-square-fill"></i> Add Entry
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.min.js}"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+2023-01-13 07:40:03 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DELETE [*]* FROM ENTRY_ITEMS"; expected "identifier"; SQL statement:
+DELETE * FROM ENTRY_ITEMS [42001-214]
+2023-01-13 07:40:17 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP [*]* FROM ENTRY_ITEMS"; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL OBJECTS, DOMAIN, TYPE, DATATYPE, AGGREGATE, SYNONYM"; SQL statement:
+DROP * FROM ENTRY_ITEMS [42001-214]
